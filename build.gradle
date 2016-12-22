@@ -1,0 +1,44 @@
+buildscript {
+    ext {
+        kotlin_ver = '1.0.5-3'
+        spring_ver = '1.4.2.RELEASE'
+        exposed_ver = '0.7.4'
+    }
+}
+
+allprojects {
+    buildscript {
+        repositories {
+            jcenter()
+        }
+        dependencies {
+            classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_ver"
+        }
+    }
+
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        jcenter()
+        maven {
+            url('https://dl.bintray.com/kotlin/exposed/')
+        }
+    }
+    dependencies {
+        compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_ver"
+        compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_ver"
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    version = '0.0.1'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.2.1'
+}

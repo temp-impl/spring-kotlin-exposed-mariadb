@@ -1,0 +1,17 @@
+buildscript {
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$rootProject.properties.spring_ver"
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    compile project(':common')
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    compile 'org.springframework.boot:spring-boot-starter-jdbc'
+    compile 'org.mariadb.jdbc:mariadb-java-client:1.5.5'
+    compile 'com.fasterxml.jackson.module:jackson-module-kotlin:2.8.5'
+}

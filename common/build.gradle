@@ -1,0 +1,6 @@
+apply plugin: 'kotlin'
+
+dependencies {
+    compile "org.jetbrains.exposed:exposed:$rootProject.properties.exposed_ver"
+    compile "org.jetbrains.exposed:spring-transaction:$rootProject.properties.exposed_ver"
+}

@@ -1,0 +1,12 @@
+buildscript {
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$rootProject.properties.spring_ver"
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    compile project(':web-api')
+}
